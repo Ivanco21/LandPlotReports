@@ -19,4 +19,4 @@
 
 #### Пример:
 
-![Демо](./DemoFiles/Demo_LandPlotReports.gif)
+![Демо](./DemoFiles/Demo_LandPlotReport.gif)
