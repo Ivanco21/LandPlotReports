@@ -30,6 +30,10 @@ namespace LandPlotReports.Models
             set => _boundPountInfo = value;
         }
 
+        /// <summary>
+        /// находит первый текст с совпадающими координатами
+        /// </summary>
+        /// <param name="allTexts"></param>
         internal void FindBoundPointDescription(List<DbText> allTexts)
         {
             // все вершины полинии
@@ -69,9 +73,17 @@ namespace LandPlotReports.Models
         private Point3d _point;
         private double _description;
         private List<string> _cadastralPlotNames;
-
+        /// <summary>
+        /// точка границы(геометрия)
+        /// </summary>
         public Point3d Point { get => _point; set => _point = value; }
+        /// <summary>
+        /// описание/номер точки границы
+        /// </summary>
         public double Description { get => _description; set => _description = value; }
+        /// <summary>
+        /// имена кадастровых участков, привязанных к этой точке границы
+        /// </summary>
         public List<string> CadastralPlotNames { get => _cadastralPlotNames; set => _cadastralPlotNames = value; }
     }
 }

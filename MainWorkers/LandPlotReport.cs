@@ -20,7 +20,10 @@ namespace LandPlotReports.MainWorkers
         {
             this.nDoc = doc;
         }
-
+        /// <summary>
+        /// основной flow, сбор данных с dwg и создание отчета
+        /// </summary>
+        /// <param name="pLineId"></param>
         internal void DoMainFlowForLandPlotReport(McObjectId pLineId)
         {
 
@@ -87,6 +90,12 @@ namespace LandPlotReports.MainWorkers
             boundaryPline.BoundPountInfo = boundaryPline.BoundPountInfo
                                            .Where(inf => inf.CadastralPlotNames.Count != 0)
                                            .OrderBy(inf => inf.Description).ToList();
+
+            // пустая таблица
+            if(boundaryPline.BoundPountInfo.Count == 0)
+            {
+                return;
+            }
 
             // итоговый отчет - таблица.
             GenerateLandPlotReport(boundaryPline.BoundPountInfo);

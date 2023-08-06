@@ -39,7 +39,7 @@ namespace NCadCustom
             {
                 LandPlotReport rep = new LandPlotReport(nDoc);
                 rep.DoMainFlowForLandPlotReport(polylineFromUser);
-                ed.WriteMessage("Отчет создан!");
+                ed.WriteMessage("Скрипт успешно завершил работу!");
             }
             catch (Exception e)
             {
